@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ ! -z "$REDIS_GROUPID" ] && [ ! -z "$REDIS_USERID" ]
 then
@@ -6,4 +6,4 @@ then
     sed -i -e "s/^\(redis:[^:]\):[0-9]*:[0-9]*:/\1:$REDIS_USERID:$REDIS_GROUPID:/" /etc/passwd
 fi
 
-exec "$@"
+exec redis-server
