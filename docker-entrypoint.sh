@@ -6,4 +6,4 @@ then
     sed -i -e "s/^\(redis:[^:]\):[0-9]*:[0-9]*:/\1:$REDIS_USERID:$REDIS_GROUPID:/" /etc/passwd
 fi
 
-exec redis-server
+redis-server
